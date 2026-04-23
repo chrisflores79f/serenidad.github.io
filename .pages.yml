@@ -1,0 +1,48 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: productos
+    label: Productos
+    type: collection
+    path: src/content/productos
+    filename: "{fields.slug}.md"
+    fields:
+      - name: title
+        label: Nombre del producto
+        type: string
+
+      - name: slug
+        label: Slug
+        type: string
+
+      - name: categoria
+        label: Categoría
+        type: select
+        options:
+          values: [velas, jabones, ropa]
+
+      - name: precio
+        label: Precio
+        type: number
+
+      - name: imagen
+        label: Imagen
+        type: image
+
+      - name: destacado
+        label: Destacado
+        type: boolean
+
+      - name: disponible
+        label: Disponible
+        type: boolean
+
+      - name: descripcion_corta
+        label: Descripción corta
+        type: text
+
+      - name: body
+        label: Descripción completa
+        type: rich-text
