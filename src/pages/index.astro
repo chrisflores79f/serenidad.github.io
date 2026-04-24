@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 const productos = await getCollection('productos');
+const whatsapp = "593999999999"; // cambia por tu número
 ---
 
 <html lang="es">
@@ -9,33 +10,317 @@ const productos = await getCollection('productos');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serenidad de Luna</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #2b2b2b;
+        background: #fff;
+      }
+
+      .topbar {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 8%;
+        border-bottom: 1px solid #eee;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .logo {
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      nav a {
+        margin-left: 28px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .hero {
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+          url('/serenidad.github.io/images/bouquet1.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #111;
+        color: white;
+        padding: 14px 28px;
+        text-decoration: none;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+
+      .section {
+        padding: 70px 8%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 34px;
+        margin-bottom: 40px;
+      }
+
+      .categories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .category {
+        height: 260px;
+        background: #f3eee8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 4px;
+      }
+
+      .category h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .card {
+        border: 1px solid #eee;
+        background: white;
+        transition: .2s;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,.08);
+        transform: translateY(-3px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+        background: #f7f7f7;
+      }
+
+      .card-content {
+        padding: 22px;
+      }
+
+      .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 15px;
+        color: #666;
+        margin-bottom: 14px;
+        line-height: 1.5;
+      }
+
+      .price {
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 18px;
+      }
+
+      .whatsapp {
+        display: block;
+        text-align: center;
+        background: #25D366;
+        color: white;
+        padding: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 3px;
+      }
+
+      .about {
+        background: #f7f2ec;
+        text-align: center;
+      }
+
+      .about p {
+        max-width: 760px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #555;
+      }
+
+      footer {
+        background: #111;
+        color: white;
+        padding: 45px 8%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav a {
+          margin: 0 8px;
+        }
+
+        .hero h1 {
+          font-size: 38px;
+        }
+
+        .categories,
+        .products {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
 
   <body>
+    <div class="topbar">
+      Compra por WhatsApp | Productos artesanales y seleccionados
+    </div>
+
     <header>
-      <h1>Serenidad de Luna</h1>
-      <p>Velas, jabones y ropa de medio uso</p>
+      <div class="logo">Serenidad de Luna</div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </header>
 
-    <main>
-      <section>
-        <h2>Productos</h2>
+    <section class="hero" id="inicio">
+      <div>
+        <h1>Estilo, aroma y bienestar</h1>
+        <p>Velas, jabones y ropa de medio uso seleccionada con cuidado.</p>
+        <a href="#productos" class="btn">Ver catálogo</a>
+      </div>
+    </section>
 
-        <div>
-          {productos.map((producto) => (
-            <article>
-              <img 
-                src={producto.data.imagen} 
-                alt={producto.data.title} 
-                width="250" 
-              />
+    <section class="section" id="categorias">
+      <h2 class="section-title">Compra por categoría</h2>
+
+      <div class="categories">
+        <div class="category">
+          <div>
+            <h3>Velas</h3>
+            <p>Aromas para crear momentos especiales.</p>
+          </div>
+        </div>
+
+        <div class="category">
+          <div>
+            <h3>Jabones</h3>
+            <p>Cuidado diario con un toque artesanal.</p>
+          </div>
+        </div>
+
+        <div class="category">
+          <div>
+            <h3>Ropa medio uso</h3>
+            <p>Prendas seleccionadas con estilo y conciencia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="productos">
+      <h2 class="section-title">Productos destacados</h2>
+
+      <div class="products">
+        {productos.map((producto) => (
+          <article class="card">
+            <img src={producto.data.imagen} alt={producto.data.title} />
+
+            <div class="card-content">
               <h3>{producto.data.title}</h3>
               <p>{producto.data.descripcion_corta}</p>
-              <strong>${producto.data.precio}</strong>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
+              <div class="price">${producto.data.precio}</div>
+
+              <a
+                class="whatsapp"
+                target="_blank"
+                href={`https://wa.me/${whatsapp}?text=Hola,%20quiero%20información%20sobre%20${encodeURIComponent(producto.data.title)}`}
+              >
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section about">
+      <h2 class="section-title">Sobre Serenidad de Luna</h2>
+      <p>
+        Somos una marca pensada para quienes buscan detalles especiales,
+        productos con encanto y compras conscientes. Ofrecemos velas,
+        jabones y ropa de medio uso cuidadosamente seleccionada.
+      </p>
+    </section>
+
+    <footer id="contacto">
+      <div>
+        <h3>Serenidad de Luna</h3>
+        <p>Velas, jabones y ropa medio uso.</p>
+      </div>
+
+      <div>
+        <h3>Contacto</h3>
+        <p>WhatsApp: +593 999 999 999</p>
+        <p>Instagram: @serenidaddeluna</p>
+      </div>
+    </footer>
   </body>
 </html>
