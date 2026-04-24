@@ -103,15 +103,53 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
       }
 
       .category {
-        height: 260px;
-        background: #f3eee8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-        border-radius: 4px;
-      }
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.category::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+}
+
+.category div {
+  position: relative;
+  z-index: 1;
+}
+
+.category h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.category p {
+  font-size: 15px;
+}
+
+.category-velas {
+  background-image: url('/serenidad.github.io/images/categoria-velas.jpg');
+}
+
+.category-jabones {
+  background-image: url('/serenidad.github.io/images/categoria-jabones.jpg');
+}
+
+.category-ropa {
+  background-image: url('/serenidad.github.io/images/categoria-ropa.jpg');
+}
 
       .category h3 {
         font-size: 28px;
@@ -250,28 +288,29 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
 
     <section class="section" id="categorias">
       <h2 class="section-title">Compra por categoría</h2>
-
-      <div class="categories">
-        <div class="category">
-          <div>
-            <h3>Velas</h3>
-            <p>Aromas para crear momentos especiales.</p>
-          </div>
+        <div class="categories">
+          <a class="category category-velas" href="/serenidad.github.io/velas/">
+            <div>
+              <h3>Velas</h3>
+              <p>Aromas para crear momentos especiales.</p>
+            </div>
+          </a>
+        
+          <a class="category category-jabones" href="/serenidad.github.io/jabones/">
+            <div>
+              <h3>Jabones</h3>
+              <p>Cuidado diario con un toque artesanal.</p>
+            </div>
+          </a>
+        
+          <a class="category category-ropa" href="/serenidad.github.io/ropa/">
+            <div>
+              <h3>Ropa medio uso</h3>
+              <p>Prendas seleccionadas con estilo y conciencia.</p>
+            </div>
+          </a>
         </div>
-
-        <div class="category">
-          <div>
-            <h3>Jabones</h3>
-            <p>Cuidado diario con un toque artesanal.</p>
-          </div>
-        </div>
-
-        <div class="category">
-          <div>
-            <h3>Ropa medio uso</h3>
-            <p>Prendas seleccionadas con estilo y conciencia.</p>
-          </div>
-        </div>
+      
       </div>
     </section>
 
