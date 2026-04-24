@@ -31,25 +31,33 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 22px 8%;
+        padding: 18px 8%;
         border-bottom: 1px solid #eee;
         background: white;
         position: sticky;
         top: 0;
         z-index: 10;
       }
+     .logo img {
+        height: 55px;
+        object-fit: contain;
+        transition: 0.2s;
+      }
 
-      .logo {
-        font-size: 26px;
-        font-weight: bold;
-        letter-spacing: 1px;
+    .logo img:hover {
+        transform: scale(1.05);
       }
 
       nav a {
-        margin-left: 28px;
+        margin-left: 30px;
         text-decoration: none;
         color: #333;
-        font-weight: 600;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+
+      nav a:hover {
+        color: #8b3a3a;
       }
 
       .hero {
@@ -255,6 +263,12 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
           font-size: 38px;
         }
 
+        .hero-logo {
+          width: 140px;
+          margin-bottom: 20px;
+          opacity: 0.95;
+        }
+
         .categories,
         .products {
           grid-template-columns: 1fr;
@@ -269,7 +283,9 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
     </div>
 
     <header>
-      <div class="logo">Serenidad de Luna</div>
+      <div class="logo">
+        <img src="/serenidad.github.io/images/logo.png" alt="Serenidad de Luna" />
+      </div>
       <nav>
         <a href="#inicio">Inicio</a>
         <a href="#categorias">Categorías</a>
@@ -280,6 +296,7 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
 
     <section class="hero" id="inicio">
       <div>
+        <img src="/serenidad.github.io/images/logo.png" class="hero-logo" />        
         <h1>Estilo, aroma y bienestar</h1>
         <p>Velas, jabones y ropa de medio uso seleccionada con cuidado.</p>
         <a href="#productos" class="btn">Ver catálogo</a>
