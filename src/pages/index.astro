@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+
+const productos = await getCollection('productos');
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serenidad de Luna</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Serenidad de Luna</h1>
+      <p>Velas, jabones y ropa de medio uso</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Productos</h2>
+
+        <div>
+          {productos.map((producto) => (
+            <article>
+              <img 
+                src={producto.data.imagen} 
+                alt={producto.data.title} 
+                width="250" 
+              />
+              <h3>{producto.data.title}</h3>
+              <p>{producto.data.descripcion_corta}</p>
+              <strong>${producto.data.precio}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
