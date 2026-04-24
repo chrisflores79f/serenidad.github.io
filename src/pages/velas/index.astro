@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+
+const productos = await getCollection('productos');
+const productosCategoria = productos.filter((p) => p.data.categoria === "velas");
+const whatsapp = "593999999999";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Velas | Serenidad de Luna</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; color: #222; background: #fff; }
+      header { padding: 24px 8%; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+      header a { text-decoration: none; color: #111; font-weight: bold; }
+      .hero { padding: 80px 8%; background: #f7f2ec; text-align: center; }
+      .hero h1 { font-size: 44px; margin-bottom: 12px; }
+      .hero p { font-size: 18px; color: #555; }
+      .products { padding: 60px 8%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+      .card { border: 1px solid #eee; background: white; transition: .2s; }
+      .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-3px); }
+      .card img { width: 100%; height: 320px; object-fit: cover; background: #f7f7f7; }
+      .card-content { padding: 22px; }
+      .card h3 { font-size: 20px; margin-bottom: 10px; }
+      .card p { color: #666; line-height: 1.5; margin-bottom: 14px; }
+      .price { font-size: 20px; font-weight: bold; margin-bottom: 18px; }
+      .whatsapp { display: block; background: #25D366; color: white; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 3px; }
+      .empty { padding: 60px 8%; text-align: center; color: #666; }
+      @media (max-width: 900px) { .products { grid-template-columns: 1fr; } header { flex-direction: column; gap: 12px; } }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="/serenidad.github.io/">Serenidad de Luna</a>
+      <a href="/serenidad.github.io/">Volver al inicio</a>
+    </header>
+
+    <section class="hero">
+      <h1>Velas</h1>
+      <p>Aromas especiales para decorar, regalar y crear momentos únicos.</p>
+    </section>
+
+    {productosCategoria.length > 0 ? (
+      <section class="products">
+        {productosCategoria.map((producto) => (
+          <article class="card">
+            <img src={producto.data.imagen} alt={producto.data.title} />
+            <div class="card-content">
+              <h3>{producto.data.title}</h3>
+              <p>{producto.data.descripcion_corta}</p>
+              <div class="price">${producto.data.precio}</div>
+              <a
+                class="whatsapp"
+                target="_blank"
+                href={`https://wa.me/${whatsapp}?text=Hola,%20quiero%20información%20sobre%20${encodeURIComponent(producto.data.title)}`}
+              >
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </article>
+        ))}
+      </section>
+    ) : (
+      <div class="empty">Pronto agregaremos productos en esta categoría.</div>
+    )}
+  </body>
+</html>
