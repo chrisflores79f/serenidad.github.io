@@ -6,6 +6,7 @@ const whatsapp = "593 99 802 2405"; // cambia por tu número
 
 const getImagePath = (path) => {
   if (!path) return "";
+
   return path.startsWith("/serenidad.github.io")
     ? path
     : `/serenidad.github.io${path}`;
