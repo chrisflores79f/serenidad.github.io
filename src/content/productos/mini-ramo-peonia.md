@@ -1,12 +1,10 @@
 ---
-title: "Mini Ramo Peonia"
-slug: "mini-ramo-peonia"
-categoria: "flores"
+title: Mini Ramo Peonia
+slug: mini-ramo-peonia
+categoria: velas
 precio: 3
-imagen: "/images/mini-ramo-peonia.jpg"
+imagen: /images/mini ramo peonia-1.png
 destacado: false
 disponible: true
-descripcion_corta: "Mini ramo con flor peonia."
-body: "Un pequeño ramo decorativo con flor estilo peonia, ideal para detalles, regalos y arreglos delicados. Perfecto para complementar velas o empaques personalizados."
+descripcion_corta: Mini ramo con flor peonia.
 ---
-
