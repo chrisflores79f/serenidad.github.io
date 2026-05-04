@@ -3,7 +3,7 @@ title: Elegante II
 slug: elegante-ii
 categoria: velas
 precio: 14
-imagen: /images/cemento mujer elegante 2.png
+imagen: /images/cemento mujer elegante 2-1.png
 destacado: false
 disponible: true
 descripcion_corta: Colección elegante estilo II.
