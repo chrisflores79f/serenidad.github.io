@@ -1,12 +1,10 @@
 ---
-title: "Ramo Mediano"
-slug: "ramo-mediano"
-categoria: "flores"
+title: Ramo Mediano
+slug: ramo-mediano
+categoria: velas
 precio: 7
-imagen: "/images/ramo-mediano.jpg"
+imagen: /images/bouquet mediano-1.png
 destacado: false
 disponible: true
-descripcion_corta: "Ramo mediano decorativo."
-body: "Un ramo mediano con flores decorativas de alta calidad, ideal para regalos especiales, arreglos y presentaciones elegantes. Perfecto para complementar productos artesanales."
+descripcion_corta: Ramo mediano decorativo.
 ---
-
