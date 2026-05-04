@@ -1,12 +1,10 @@
 ---
-title: "Ramo Pequeño"
-slug: "ramo-pequeno"
-categoria: "flores"
+title: Ramo Pequeño
+slug: ramo-pequeno
+categoria: velas
 precio: 5
-imagen: "/images/ramo-pequeno.jpg"
+imagen: /images/mini ramo peonia.png
 destacado: false
 disponible: true
-descripcion_corta: "Ramo pequeño decorativo."
-body: "Un ramo pequeño elaborado con flores decorativas, ideal para regalos, arreglos y presentaciones delicadas. Perfecto para complementar velas y empaques personalizados."
+descripcion_corta: Ramo pequeño decorativo.
 ---
-
