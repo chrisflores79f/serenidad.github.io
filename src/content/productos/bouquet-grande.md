@@ -1,12 +1,10 @@
 ---
-title: "Bouquet Grande"
-slug: "bouquet-grande"
-categoria: "flores"
+title: Bouquet Grande
+slug: bouquet-grande
+categoria: velas
 precio: 10
-imagen: "/images/bouquet-grande.jpg"
+imagen: /images/bouquet grande.png
 destacado: false
 disponible: true
-descripcion_corta: "Bouquet grande decorativo."
-body: "Un bouquet grande y vistoso elaborado con flores decorativas. Ideal para ocasiones especiales, regalos importantes y decoraciones destacadas."
+descripcion_corta: Bouquet grande decorativo.
 ---
-
