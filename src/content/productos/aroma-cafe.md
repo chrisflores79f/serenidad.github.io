@@ -5,6 +5,6 @@ categoria: velas
 precio: 0.5
 imagen: /images/aroma-cafe.jpg
 destacado: false
-disponible: true
+disponible: false
 descripcion_corta: Aroma intenso de café.
 ---
