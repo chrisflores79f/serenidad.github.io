@@ -1,12 +1,10 @@
 ---
-title: "Bouquet Mediano"
-slug: "bouquet-mediano"
-categoria: "flores"
+title: Bouquet Mediano
+slug: bouquet-mediano
+categoria: velas
 precio: 8
-imagen: "/images/bouquet-mediano.jpg"
+imagen: /images/bouquet mediano.png
 destacado: false
 disponible: true
-descripcion_corta: "Bouquet mediano decorativo."
-body: "Un bouquet mediano con flores decorativas, perfecto para regalos especiales, presentaciones elegantes y decoraciones llamativas."
+descripcion_corta: Bouquet mediano decorativo.
 ---
-
