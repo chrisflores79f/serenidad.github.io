@@ -1,12 +1,10 @@
 ---
-title: "Ramo Grande"
-slug: "ramo-grande"
-categoria: "flores"
+title: Ramo Grande
+slug: ramo-grande
+categoria: velas
 precio: 9
-imagen: "/images/ramo-grande.jpg"
+imagen: /images/bouquet grande-1.png
 destacado: false
 disponible: true
-descripcion_corta: "Ramo grande decorativo."
-body: "Un ramo grande y vistoso elaborado con flores decorativas. Ideal para regalos importantes, presentaciones especiales y decoraciones llamativas."
+descripcion_corta: Ramo grande decorativo.
 ---
-
