@@ -2,7 +2,7 @@
 title: jabones
 slug: jabones
 categoria: jabones
-precio: 5
+precio: 4
 imagen: /images/jabones.jpeg
 destacado: true
 disponible: false
