@@ -1,12 +1,10 @@
 ---
-title: "Aroma Eucalipto"
-slug: "aroma-eucalipto"
-categoria: "aromas"
-precio: 0.50
-imagen: "/images/aroma-eucalipto.jpg"
+title: Aroma Eucalipto
+slug: aroma-eucalipto
+categoria: velas
+precio: 0.5
+imagen: /images/aroma-eucalipto.jpg
 destacado: false
 disponible: true
-descripcion_corta: "Aroma fresco de eucalipto."
-body: "Un aroma refrescante y purificante, ideal para ambientes relajantes y velas artesanales."
+descripcion_corta: Aroma fresco de eucalipto.
 ---
-
