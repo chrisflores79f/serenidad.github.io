@@ -1,12 +1,10 @@
 ---
-title: "Florero Decorativo"
-slug: "florero"
-categoria: "floreros"
+title: Florero Decorativo
+slug: florero
+categoria: velas
 precio: 6
-imagen: "/images/florero.jpg"
+imagen: /images/cemento florero.png
 destacado: false
 disponible: true
-descripcion_corta: "Florero decorativo artesanal."
-body: "Un florero decorativo elaborado con materiales de alta calidad, ideal para arreglos florales, decoraciones de interiores y presentaciones elegantes."
+descripcion_corta: Florero decorativo artesanal.
 ---
-
