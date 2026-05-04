@@ -1,12 +1,10 @@
 ---
-title: "Porta Vela Media Luna"
-slug: "porta-media-luna"
-categoria: "porta-velas"
+title: Porta Vela Media Luna
+slug: porta-media-luna
+categoria: velas
 precio: 4
-imagen: "/images/porta-media-luna.jpg"
+imagen: /images/cemento porta velas.png
 destacado: false
 disponible: true
-descripcion_corta: "Porta vela con forma de media luna."
-body: "Un porta vela decorativo con forma de media luna, ideal para complementar velas artesanales y crear ambientes cálidos y armoniosos."
+descripcion_corta: Porta vela con forma de media luna.
 ---
-
