@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 const productos = await getCollection('productos');
+const productosDestacados = productos.filter((producto) => producto.data.destacado === true);
 const whatsapp = "593998022405";
 
 const getImagePath = (path) => {
@@ -531,7 +532,7 @@ const getImagePath = (path) => {
           </div>
         
           <div class="featured-products">
-            {productos.map((producto) => (
+            {productosDestacados.map((producto) => (
               <article class="featured-card">
                 <div class="featured-image">
                   <img 
