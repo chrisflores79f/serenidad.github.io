@@ -1,12 +1,10 @@
 ---
-title: "Colección Pareja"
-slug: "coleccion-pareja"
-categoria: "colecciones"
+title: Colección Pareja
+slug: coleccion-pareja
+categoria: velas
 precio: 15
-imagen: "/images/coleccion-pareja.jpg"
+imagen: /images/cemento pareja.png
 destacado: false
 disponible: true
-descripcion_corta: "Colección decorativa temática de pareja."
-body: "Una colección inspirada en el amor y la conexión, ideal para aniversarios, regalos románticos y decoraciones temáticas. Incluye piezas cuidadosamente seleccionadas."
+descripcion_corta: Colección decorativa temática de pareja.
 ---
-
