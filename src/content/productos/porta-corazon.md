@@ -1,12 +1,10 @@
 ---
-title: "Porta Vela Corazón"
-slug: "porta-corazon"
-categoria: "porta-velas"
+title: Porta Vela Corazón
+slug: porta-corazon
+categoria: velas
 precio: 4
-imagen: "/images/porta-corazon.jpg"
+imagen: /images/cemento porta velas2.png
 destacado: false
 disponible: true
-descripcion_corta: "Porta vela con forma de corazón."
-body: "Un porta vela decorativo con forma de corazón, perfecto para regalos románticos, detalles especiales y decoraciones temáticas."
+descripcion_corta: Porta vela con forma de corazón.
 ---
-
