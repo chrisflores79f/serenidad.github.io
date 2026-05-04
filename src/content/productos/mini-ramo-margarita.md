@@ -1,12 +1,10 @@
 ---
-title: "Mini Ramo Margarita"
-slug: "mini-ramo-margarita"
-categoria: "flores"
+title: Mini Ramo Margarita
+slug: mini-ramo-margarita
+categoria: velas
 precio: 3
-imagen: "/images/mini-ramo-margarita.jpg"
+imagen: /images/mini ramo margarita.png
 destacado: false
 disponible: true
-descripcion_corta: "Mini ramo con margaritas."
-body: "Un pequeño ramo decorativo con margaritas, perfecto para detalles delicados, arreglos florales y regalos personalizados. Ideal para complementar empaques y velas."
+descripcion_corta: Mini ramo con margaritas.
 ---
-
