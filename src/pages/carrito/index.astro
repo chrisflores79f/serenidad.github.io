@@ -5,28 +5,34 @@ const whatsapp = "593998022405";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito | Serenidad de Luna</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: Arial, sans-serif;
         margin: 0;
+        font-family: Arial, sans-serif;
         background: #fffaf3;
-        color: #222;
+        color: #2b2b2b;
       }
 
       header {
-        padding: 22px 8%;
+        background: white;
+        padding: 18px 8%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         border-bottom: 1px solid #eee;
-        background: white;
       }
 
       header a {
         text-decoration: none;
-        color: #111;
-        font-weight: bold;
+        color: #7b2d2d;
+        font-weight: 700;
       }
 
       .container {
@@ -34,84 +40,178 @@ const whatsapp = "593998022405";
       }
 
       h1 {
+        color: #7b2d2d;
         font-size: 38px;
         margin-bottom: 30px;
-        color: #7b2d2d;
       }
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
+      .cart-layout {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .cart-card {
         background: white;
-        margin-bottom: 30px;
-      }
-
-      th, td {
+        border-radius: 10px;
         padding: 18px;
-        border-bottom: 1px solid #ddd;
-        text-align: left;
+        display: grid;
+        grid-template-columns: 110px 1fr auto;
+        gap: 18px;
+        align-items: center;
+        box-shadow: 0 8px 24px rgba(0,0,0,.07);
       }
 
-      }
-      img {
-        width: 80px;
-        height: 80px;
+      .cart-card img {
+        width: 110px;
+        height: 110px;
         object-fit: cover;
-        border-radius: 6px;
+        border-radius: 8px;
+        background: #f2f2f2;
       }
 
-      input {
-        width: 60px;
-        padding: 8px;
+      .product-info h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        color: #2b2b2b;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #8b3a3a;
+        margin-bottom: 10px;
+      }
+
+      .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .quantity-control button {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #ddd;
+        background: #fffaf3;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .quantity-control span {
+        min-width: 28px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .item-actions {
+        text-align: right;
+      }
+
+      .subtotal {
+        font-weight: bold;
+        margin-bottom: 14px;
       }
 
       .remove {
+        border: none;
         background: transparent;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
+        color: #8b3a3a;
         cursor: pointer;
+        font-weight: bold;
       }
 
       .summary {
-        max-width: 480px;
-        margin-left: auto;
         background: white;
-        padding: 28px;
-        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 26px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.07);
+        position: sticky;
+        top: 20px;
       }
 
       .summary h2 {
-        margin-bottom: 20px;
+        margin-top: 0;
+        color: #7b2d2d;
+        font-size: 26px;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        padding: 14px 0;
+      }
+
+      .summary-total {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
         color: #7b2d2d;
       }
 
-      .total {
-        display: flex;
-        justify-content: space-between;
-        font-size: 22px;
-        font-weight: bold;
-        margin: 25px 0;
-      }
-
       .whatsapp {
-        display: block;
         width: 100%;
+        border: none;
         background: #25D366;
         color: white;
         padding: 16px;
-        border: none;
-        border-radius: 4px;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: bold;
+        border-radius: 6px;
         cursor: pointer;
+      }
+
+      .whatsapp:hover {
+        background: #1ebe5d;
       }
 
       .empty {
         background: white;
-        padding: 30px;
-        border: 1px solid #eee;
+        padding: 35px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(0,0,0,.07);
+      }
+
+      .empty a {
+        display: inline-block;
+        margin-top: 18px;
+        background: #8b3a3a;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      @media (max-width: 900px) {
+        .cart-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-card {
+          grid-template-columns: 90px 1fr;
+        }
+
+        .cart-card img {
+          width: 90px;
+          height: 90px;
+        }
+
+        .item-actions {
+          grid-column: 1 / -1;
+          text-align: left;
+        }
       }
     </style>
   </head>
@@ -124,7 +224,6 @@ const whatsapp = "593998022405";
 
     <main class="container">
       <h1>Carrito</h1>
-
       <div id="cart-content"></div>
     </main>
 
@@ -133,7 +232,7 @@ const whatsapp = "593998022405";
       const cartContent = document.getElementById("cart-content");
 
       function formatPrice(value) {
-        return `$${value.toFixed(2)}`;
+        return `$${Number(value).toFixed(2)}`;
       }
 
       function getCart() {
@@ -150,65 +249,87 @@ const whatsapp = "593998022405";
         if (cart.length === 0) {
           cartContent.innerHTML = `
             <div class="empty">
-              <p>Tu carrito está vacío.</p>
-              <br>
+              <h2>Tu carrito está vacío</h2>
+              <p>Agrega productos desde el catálogo para hacer tu pedido.</p>
               <a href="/">Volver al catálogo</a>
             </div>
           `;
           return;
         }
 
-        const subtotal = cart.reduce((sum, item) => {
-          return sum + item.price * item.quantity;
-        }, 0);
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
         cartContent.innerHTML = `
-          <table>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-              </tr>
-            </thead>
-            <tbody>
+          <div class="cart-layout">
+            <section class="cart-items">
               ${cart.map((item, index) => `
-                <tr>
-                  <td><button class="remove" data-index="${index}">×</button></td>
-                  <td>
-                    <img src="${item.image}" alt="${item.title}">
-                    <strong>${item.title}</strong>
-                  </td>
-                  <td>${formatPrice(item.price)}</td>
-                  <td>
-                    <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="quantity">
-                  </td>
-                  <td>${formatPrice(item.price * item.quantity)}</td>
-                </tr>
+                <article class="cart-card">
+                  <img src="${item.image}" alt="${item.title}" />
+
+                  <div class="product-info">
+                    <h3>${item.title}</h3>
+                    <div class="price">${formatPrice(item.price)}</div>
+
+                    <div class="quantity-control">
+                      <button class="decrease" data-index="${index}">-</button>
+                      <span>${item.quantity}</span>
+                      <button class="increase" data-index="${index}">+</button>
+                    </div>
+                  </div>
+
+                  <div class="item-actions">
+                    <div class="subtotal">${formatPrice(item.price * item.quantity)}</div>
+                    <button class="remove" data-index="${index}">Eliminar</button>
+                  </div>
+                </article>
               `).join("")}
-            </tbody>
-          </table>
+            </section>
 
-          <div class="summary">
-            <h2>Totales del carrito</h2>
-            <div class="total">
-              <span>Total</span>
-              <span>${formatPrice(subtotal)}</span>
-            </div>
+            <aside class="summary">
+              <h2>Resumen</h2>
 
-            <button class="whatsapp" id="send-whatsapp">
-              Hacer pedido por WhatsApp
-            </button>
+              <div class="summary-row">
+                <span>Productos</span>
+                <span>${totalItems}</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span>${formatPrice(total)}</span>
+              </div>
+
+              <div class="summary-total">
+                <span>Total</span>
+                <span>${formatPrice(total)}</span>
+              </div>
+
+              <button class="whatsapp" id="send-whatsapp">
+                Hacer pedido por WhatsApp
+              </button>
+            </aside>
           </div>
         `;
 
-        document.querySelectorAll(".quantity").forEach((input) => {
-          input.addEventListener("change", () => {
+        document.querySelectorAll(".increase").forEach((button) => {
+          button.addEventListener("click", () => {
             const cart = getCart();
-            const index = input.dataset.index;
-            cart[index].quantity = Number(input.value);
+            const index = Number(button.dataset.index);
+            cart[index].quantity += 1;
+            saveCart(cart);
+            renderCart();
+          });
+        });
+
+        document.querySelectorAll(".decrease").forEach((button) => {
+          button.addEventListener("click", () => {
+            const cart = getCart();
+            const index = Number(button.dataset.index);
+
+            if (cart[index].quantity > 1) {
+              cart[index].quantity -= 1;
+            }
+
             saveCart(cart);
             renderCart();
           });
@@ -217,7 +338,8 @@ const whatsapp = "593998022405";
         document.querySelectorAll(".remove").forEach((button) => {
           button.addEventListener("click", () => {
             const cart = getCart();
-            cart.splice(button.dataset.index, 1);
+            const index = Number(button.dataset.index);
+            cart.splice(index, 1);
             saveCart(cart);
             renderCart();
           });
@@ -226,15 +348,15 @@ const whatsapp = "593998022405";
         document.getElementById("send-whatsapp").addEventListener("click", () => {
           const cart = getCart();
 
-          const message = cart.map((item) => {
+          const items = cart.map((item) => {
             return `- ${item.title} x${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`;
           }).join("%0A");
 
           const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-          const finalMessage = `Hola,%20quiero%20hacer%20este%20pedido:%0A%0A${message}%0A%0ATotal:%20$${total.toFixed(2)}`;
+          const message = `Hola,%20quiero%20hacer%20este%20pedido:%0A%0A${items}%0A%0ATotal:%20$${total.toFixed(2)}`;
 
-          window.open(`https://wa.me/${whatsapp}?text=${finalMessage}`, "_blank");
+          window.open(`https://wa.me/${whatsapp}?text=${message}`, "_blank");
         });
       }
 
