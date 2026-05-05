@@ -7,7 +7,7 @@ const whatsapp = "593998022405";
 const getImagePath = (path) => {
   if (!path) return "";
 
-  return path.startsWith("/serenidad.github.io-DISABLED")
+  return false
     ? path
     : `${path}`;
 };
@@ -83,7 +83,7 @@ const getImagePath = (path) => {
           text-align: center;
           padding: 90px 20px;
           background: linear-gradient(rgba(40, 20, 18, .58), rgba(40, 20, 18, .58)),
-            url('/serenidad.github.io/images/bouquet1.png');
+            url('/images/bouquet1.png');
           background-size: cover;
           background-position: center;
           color: white;
@@ -205,15 +205,15 @@ const getImagePath = (path) => {
 
 
 .category-velas {
-  background-image: url('/serenidad.github.io/images/categoria-velas.jpg');
+  background-image: url('/images/categoria-velas.jpg');
 }
 
 .category-jabones {
-  background-image: url('/serenidad.github.io/images/categoria-jabones.jpg');
+  background-image: url('/images/categoria-jabones.jpg');
 }
 
 .category-ropa {
-  background-image: url('/serenidad.github.io/images/categoria-ropa.jpg');
+  background-image: url('/images/categoria-ropa.jpg');
 }
 
       .category h3 {
@@ -479,7 +479,7 @@ const getImagePath = (path) => {
         <a href="#categorias">Categorías</a>
         <a href="#productos">Productos</a>
         <a href="#contacto">Contacto</a>
-        <a href="/serenidad.github.io/carrito/">Carrito</a>
+        <a href="/carrito/">Carrito</a>
       </nav>
     </header>
 
@@ -494,21 +494,21 @@ const getImagePath = (path) => {
     <section class="section" id="categorias">
       <h2 class="section-title">Compra por categoría</h2>
         <div class="categories">
-          <a class="category category-velas" href="/serenidad.github.io/velas/">
+          <a class="category category-velas" href="/velas/">
             <div>
               <h3>Velas</h3>
               <p>Aromas para crear momentos especiales.</p>
             </div>
           </a>
         
-          <a class="category category-jabones" href="/serenidad.github.io/jabones/">
+          <a class="category category-jabones" href="/jabones/">
             <div>
               <h3>Jabones</h3>
               <p>Cuidado diario con un toque artesanal.</p>
             </div>
           </a>
         
-          <a class="category category-ropa" href="/serenidad.github.io/ropa/">
+          <a class="category category-ropa" href="/ropa/">
             <div>
               <h3>Ropa medio uso</h3>
               <p>Prendas seleccionadas con estilo y conciencia.</p>

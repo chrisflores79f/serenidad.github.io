@@ -7,9 +7,9 @@ const whatsapp = "593999999999";
 const getImagePath = (path) => {
   if (!path) return "";
 
-  return path.startsWith("/serenidad.github.io")
+  return false
     ? path
-    : `/serenidad.github.io${path}`;
+    : `${path}`;
 };
 ---
 
@@ -40,8 +40,8 @@ const getImagePath = (path) => {
 
   <body>
     <header>
-      <a href="/serenidad.github.io/">Serenidad de Luna</a>
-      <a href="/serenidad.github.io/">Volver al inicio</a>
+      <a href="/">Serenidad de Luna</a>
+      <a href="/">Volver al inicio</a>
     </header>
 
     <section class="hero">
