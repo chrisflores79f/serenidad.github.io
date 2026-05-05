@@ -58,13 +58,16 @@ const getImagePath = (path) => {
               <h3>{producto.data.title}</h3>
               <p>{producto.data.descripcion_corta}</p>
               <div class="price">${producto.data.precio}</div>
-              <a
-                class="whatsapp"
-                target="_blank"
-                href={`https://wa.me/${whatsapp}?text=Hola,%20quiero%20información%20sobre%20${encodeURIComponent(producto.data.title)}`}
+
+              <button
+                class="whatsapp add-to-cart"
+                data-title={producto.data.title}
+                data-price={producto.data.precio}
+                data-image={getImagePath(producto.data.imagen)}
               >
-                Comprar por WhatsApp
-              </a>
+                Añadir al carrito
+              </button>
+
             </div>
           </article>
         ))}
@@ -72,5 +75,31 @@ const getImagePath = (path) => {
     ) : (
       <div class="empty">Pronto agregaremos productos en esta categoría.</div>
     )}
-  </body>
+  
+<script>
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", () => {
+      const product = {
+        title: button.dataset.title,
+        price: Number(button.dataset.price),
+        image: button.dataset.image,
+        quantity: 1
+      };
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find((item) => item.title === product.title);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Producto añadido al carrito");
+    });
+  });
+</script>
+
+</body>
 </html>
