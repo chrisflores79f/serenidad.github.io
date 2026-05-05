@@ -480,6 +480,7 @@ const getImagePath = (path) => {
         <a href="#categorias">Categorías</a>
         <a href="#productos">Productos</a>
         <a href="#contacto">Contacto</a>
+        <a href="/serenidad.github.io/carrito/">Carrito</a>
       </nav>
     </header>
 
@@ -548,13 +549,15 @@ const getImagePath = (path) => {
         
                   <div class="featured-price">${producto.data.precio}</div>
         
-                  <a
-                    class="featured-whatsapp"
-                    target="_blank"
-                    href={`https://wa.me/${whatsapp}?text=Hola,%20quiero%20información%20sobre%20${encodeURIComponent(producto.data.title)}`}
+                  <button
+                    class="featured-whatsapp add-to-cart"
+                    data-title={producto.data.title}
+                    data-price={producto.data.precio}
+                    data-image={getImagePath(producto.data.imagen)}
                   >
-                    Comprar por WhatsApp
-                  </a>
+                    Añadir al carrito
+                  </button>
+
                 </div>
               </article>
             ))}
@@ -582,5 +585,30 @@ const getImagePath = (path) => {
         <p>Instagram: @serenidaddeluna</p>
       </div>
     </footer>
+    <script>
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", () => {
+            const product = {
+              title: button.dataset.title,
+              price: Number(button.dataset.price),
+              image: button.dataset.image,
+              quantity: 1
+            };
+      
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existing = cart.find((item) => item.title === product.title);
+      
+            if (existing) {
+              existing.quantity += 1;
+            } else {
+              cart.push(product);
+            }
+      
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Producto añadido al carrito");
+          });
+        });
+      </script>
+
   </body>
 </html>
