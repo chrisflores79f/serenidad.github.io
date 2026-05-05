@@ -36,81 +36,113 @@ const whatsapp = "593998022405";
       }
 
       .container {
-        padding: 50px 8%;
+        padding: 45px 6%;
       }
 
       h1 {
         color: #7b2d2d;
         font-size: 38px;
-        margin-bottom: 30px;
+        margin-bottom: 28px;
       }
-      
+
       .cart-layout {
         display: grid;
-        grid-template-columns: 1fr 340px;
+        grid-template-columns: 1fr 360px;
         gap: 32px;
         align-items: start;
       }
-      
+
       .cart-items {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 22px;
       }
-      
+
       .cart-card {
         background: white;
-        border-radius: 12px;
+        border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 8px 24px rgba(0,0,0,.07);
+        box-shadow: 0 8px 22px rgba(0,0,0,.08);
         display: flex;
         flex-direction: column;
       }
-      
+
       .cart-card img {
         width: 100%;
-        height: 180px;
+        height: 160px;
         object-fit: cover;
+        display: block;
         background: #f2f2f2;
       }
-      
+
       .product-info {
         padding: 16px;
       }
-      
+
       .product-info h3 {
         margin: 0 0 8px;
         font-size: 17px;
         color: #2b2b2b;
       }
-      
+
       .price {
         font-weight: bold;
         color: #8b3a3a;
         margin-bottom: 12px;
       }
-      
+
+      .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .quantity-control button {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ddd;
+        background: #fffaf3;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .quantity-control span {
+        min-width: 24px;
+        text-align: center;
+        font-weight: bold;
+      }
+
       .item-actions {
         padding: 0 16px 16px;
         margin-top: auto;
       }
-      
+
       .subtotal {
         font-weight: bold;
         color: #7b2d2d;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
-      
+
+      .remove {
+        border: none;
+        background: transparent;
+        color: #8b3a3a;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 0;
+      }
+
       .summary {
-        background: linear-gradient(180deg, #fff 0%, #fff3e8 100%);
+        background: linear-gradient(180deg, #ffffff 0%, #fff0e5 100%);
         border: 2px solid #b9875d;
-        border-radius: 14px;
+        border-radius: 16px;
         padding: 28px;
-        box-shadow: 0 12px 30px rgba(123,45,45,.14);
+        box-shadow: 0 12px 30px rgba(123,45,45,.16);
         position: sticky;
         top: 20px;
       }
-      
+
       .summary h2 {
         margin-top: 0;
         color: #7b2d2d;
@@ -118,7 +150,23 @@ const whatsapp = "593998022405";
         border-bottom: 2px solid #b9875d;
         padding-bottom: 14px;
       }
-      
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid #ead8c8;
+      }
+
+      .summary-total {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 0;
+        font-size: 22px;
+        font-weight: bold;
+        color: #7b2d2d;
+      }
+
       .whatsapp {
         width: 100%;
         border: none;
@@ -131,10 +179,11 @@ const whatsapp = "593998022405";
         cursor: pointer;
         box-shadow: 0 8px 18px rgba(37,211,102,.35);
       }
-      
+
       .whatsapp:hover {
         background: #1ebe5d;
       }
+
       .empty {
         background: white;
         padding: 35px;
@@ -154,29 +203,28 @@ const whatsapp = "593998022405";
         font-weight: bold;
       }
 
-         @media (max-width: 1100px) {
-      .cart-layout {
-        grid-template-columns: 1fr;
+      @media (max-width: 1100px) {
+        .cart-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-items {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .summary {
+          position: static;
+        }
       }
-    
-      .cart-items {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    
-      .summary {
-        position: static;
-      }
-    }
-    
-    @media (max-width: 700px) {
-      .cart-items {
-        grid-template-columns: 1fr;
-      }
-    
-      .cart-card img {
-        height: 220px;
-      }
-    }
+
+      @media (max-width: 700px) {
+        .cart-items {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-card img {
+          height: 200px;
+        }
       }
     </style>
   </head>
