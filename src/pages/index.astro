@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 const productos = await getCollection('productos');
 const productosDestacados = productos.filter((producto) => producto.data.destacado === true);
 const whatsapp = "593998022405";
-
 const getImagePath = (path) => {
   if (!path) return "";
 
