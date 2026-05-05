@@ -1,0 +1,243 @@
+---
+const whatsapp = "593998022405";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carrito | Serenidad de Luna</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fffaf3;
+        color: #222;
+      }
+
+      header {
+        padding: 22px 8%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        background: white;
+      }
+
+      header a {
+        text-decoration: none;
+        color: #111;
+        font-weight: bold;
+      }
+
+      .container {
+        padding: 50px 8%;
+      }
+
+      h1 {
+        font-size: 38px;
+        margin-bottom: 30px;
+        color: #7b2d2d;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        margin-bottom: 30px;
+      }
+
+      th, td {
+        padding: 18px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      input {
+        width: 60px;
+        padding: 8px;
+      }
+
+      .remove {
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+
+      .summary {
+        max-width: 480px;
+        margin-left: auto;
+        background: white;
+        padding: 28px;
+        border: 1px solid #ddd;
+      }
+
+      .summary h2 {
+        margin-bottom: 20px;
+        color: #7b2d2d;
+      }
+
+      .total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 25px 0;
+      }
+
+      .whatsapp {
+        display: block;
+        width: 100%;
+        background: #25D366;
+        color: white;
+        padding: 16px;
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .empty {
+        background: white;
+        padding: 30px;
+        border: 1px solid #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="/serenidad.github.io/">Serenidad de Luna</a>
+      <a href="/serenidad.github.io/">Volver al inicio</a>
+    </header>
+
+    <main class="container">
+      <h1>Carrito</h1>
+
+      <div id="cart-content"></div>
+    </main>
+
+    <script>
+      const whatsapp = "593998022405";
+      const cartContent = document.getElementById("cart-content");
+
+      function formatPrice(value) {
+        return `$${value.toFixed(2)}`;
+      }
+
+      function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      function renderCart() {
+        const cart = getCart();
+
+        if (cart.length === 0) {
+          cartContent.innerHTML = `
+            <div class="empty">
+              <p>Tu carrito está vacío.</p>
+              <br>
+              <a href="/serenidad.github.io/">Volver al catálogo</a>
+            </div>
+          `;
+          return;
+        }
+
+        const subtotal = cart.reduce((sum, item) => {
+          return sum + item.price * item.quantity;
+        }, 0);
+
+        cartContent.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${cart.map((item, index) => `
+                <tr>
+                  <td><button class="remove" data-index="${index}">×</button></td>
+                  <td>
+                    <img src="${item.image}" alt="${item.title}">
+                    <strong>${item.title}</strong>
+                  </td>
+                  <td>${formatPrice(item.price)}</td>
+                  <td>
+                    <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="quantity">
+                  </td>
+                  <td>${formatPrice(item.price * item.quantity)}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+
+          <div class="summary">
+            <h2>Totales del carrito</h2>
+            <div class="total">
+              <span>Total</span>
+              <span>${formatPrice(subtotal)}</span>
+            </div>
+
+            <button class="whatsapp" id="send-whatsapp">
+              Hacer pedido por WhatsApp
+            </button>
+          </div>
+        `;
+
+        document.querySelectorAll(".quantity").forEach((input) => {
+          input.addEventListener("change", () => {
+            const cart = getCart();
+            const index = input.dataset.index;
+            cart[index].quantity = Number(input.value);
+            saveCart(cart);
+            renderCart();
+          });
+        });
+
+        document.querySelectorAll(".remove").forEach((button) => {
+          button.addEventListener("click", () => {
+            const cart = getCart();
+            cart.splice(button.dataset.index, 1);
+            saveCart(cart);
+            renderCart();
+          });
+        });
+
+        document.getElementById("send-whatsapp").addEventListener("click", () => {
+          const cart = getCart();
+
+          const message = cart.map((item) => {
+            return `- ${item.title} x${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`;
+          }).join("%0A");
+
+          const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+          const finalMessage = `Hola,%20quiero%20hacer%20este%20pedido:%0A%0A${message}%0A%0ATotal:%20$${total.toFixed(2)}`;
+
+          window.open(`https://wa.me/${whatsapp}?text=${finalMessage}`, "_blank");
+        });
+      }
+
+      renderCart();
+    </script>
+  </body>
+</html>
