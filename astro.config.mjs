@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://chrisflores79f.github.io',
-  base: '/serenidad.github.io'
+  site: 'https://tranquil-starship-2da4b6.netlify.app',
+  base: '/',
 });
