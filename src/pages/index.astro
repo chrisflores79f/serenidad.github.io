@@ -451,17 +451,29 @@ const getImagePath = (path) => {
           .featured-card {
             grid-template-columns: 1fr;
           }
-        
           .featured-image img {
             height: 300px;
           }
-        
           .featured-content {
             padding: 0;
           }
-        
           .featured-heading h2 {
             font-size: 32px;
+          }
+          .featured-products {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .featured-products {
+            grid-template-columns: 1fr !important;
+          }
+          .featured-card {
+            flex-direction: column !important;
+          }
+          nav a {
+            margin-left: 12px;
+            font-size: 13px;
           }
         }
 

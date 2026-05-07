@@ -15,6 +15,14 @@ const whatsapp = "593998022405";
       h1 { color: #7b2d2d; font-size: 38px; margin-bottom: 28px; }
       .empty { background: white; padding: 35px; border-radius: 10px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.07); }
       .empty a { display: inline-block; margin-top: 18px; background: #8b3a3a; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+      @media (max-width: 768px) {
+        .carrito-layout { grid-template-columns: 1fr !important; }
+        .carrito-items { grid-template-columns: 1fr !important; }
+        h1 { font-size: 28px; }
+      }
+      @media (max-width: 480px) {
+        .container { padding: 24px 4%; }
+      }
     </style>
   </head>
   <body>
@@ -44,8 +52,8 @@ const whatsapp = "593998022405";
         const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
 
         cartContent.innerHTML = `
-          <div style="display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;">
-            <section style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+          <div style="display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;" class="carrito-layout">
+            <section style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="carrito-items">
               ${cart.map((item, index) => `
                 <article style="background:white;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08);display:flex;flex-direction:column;">
                   <img src="${item.image}" alt="${item.title}" style="width:100%;height:160px;object-fit:cover;display:block;background:#f2f2f2;" />
