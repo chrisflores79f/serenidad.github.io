@@ -1,375 +1,105 @@
 ---
 const whatsapp = "593998022405";
 ---
-
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito | Serenidad de Luna</title>
-
     <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #fffaf3;
-        color: #2b2b2b;
-      }
-
-      header {
-        background: white;
-        padding: 18px 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #eee;
-      }
-
-      header a {
-        text-decoration: none;
-        color: #7b2d2d;
-        font-weight: 700;
-      }
-
-      .container {
-        padding: 45px 6%;
-      }
-
-      h1 {
-        color: #7b2d2d;
-        font-size: 38px;
-        margin-bottom: 28px;
-      }
-
-      .cart-layout {
-        display: grid;
-        grid-template-columns: 1fr 360px;
-        gap: 32px;
-        align-items: start;
-      }
-
-      .cart-items {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-      }
-
-      .cart-card {
-        background: white;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 8px 22px rgba(0,0,0,.08);
-        display: flex;
-        flex-direction: column;
-      }
-
-      .cart-card img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        display: block;
-        background: #f2f2f2;
-      }
-
-      .product-info {
-        padding: 16px;
-      }
-
-      .product-info h3 {
-        margin: 0 0 8px;
-        font-size: 17px;
-        color: #2b2b2b;
-      }
-
-      .price {
-        font-weight: bold;
-        color: #8b3a3a;
-        margin-bottom: 12px;
-      }
-
-      .quantity-control {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .quantity-control button {
-        width: 30px;
-        height: 30px;
-        border: 1px solid #ddd;
-        background: #fffaf3;
-        cursor: pointer;
-        border-radius: 5px;
-        font-weight: bold;
-      }
-
-      .quantity-control span {
-        min-width: 24px;
-        text-align: center;
-        font-weight: bold;
-      }
-
-      .item-actions {
-        padding: 0 16px 16px;
-        margin-top: auto;
-      }
-
-      .subtotal {
-        font-weight: bold;
-        color: #7b2d2d;
-        margin-bottom: 10px;
-      }
-
-      .remove {
-        border: none;
-        background: transparent;
-        color: #8b3a3a;
-        cursor: pointer;
-        font-weight: bold;
-        padding: 0;
-      }
-
-      .summary {
-        background: linear-gradient(180deg, #ffffff 0%, #fff0e5 100%);
-        border: 2px solid #b9875d;
-        border-radius: 16px;
-        padding: 28px;
-        box-shadow: 0 12px 30px rgba(123,45,45,.16);
-        position: sticky;
-        top: 20px;
-      }
-
-      .summary h2 {
-        margin-top: 0;
-        color: #7b2d2d;
-        font-size: 28px;
-        border-bottom: 2px solid #b9875d;
-        padding-bottom: 14px;
-      }
-
-      .summary-row {
-        display: flex;
-        justify-content: space-between;
-        padding: 14px 0;
-        border-bottom: 1px solid #ead8c8;
-      }
-
-      .summary-total {
-        display: flex;
-        justify-content: space-between;
-        padding: 22px 0;
-        font-size: 22px;
-        font-weight: bold;
-        color: #7b2d2d;
-      }
-
-      .whatsapp {
-        width: 100%;
-        border: none;
-        background: #25D366;
-        color: white;
-        padding: 17px;
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 8px 18px rgba(37,211,102,.35);
-      }
-
-      .whatsapp:hover {
-        background: #1ebe5d;
-      }
-
-      .empty {
-        background: white;
-        padding: 35px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 8px 24px rgba(0,0,0,.07);
-      }
-
-      .empty a {
-        display: inline-block;
-        margin-top: 18px;
-        background: #8b3a3a;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      @media (max-width: 1100px) {
-        .cart-layout {
-          grid-template-columns: 1fr;
-        }
-
-        .cart-items {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .summary {
-          position: static;
-        }
-      }
-
-      @media (max-width: 700px) {
-        .cart-items {
-          grid-template-columns: 1fr;
-        }
-
-        .cart-card img {
-          height: 200px;
-        }
-      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Arial, sans-serif; background: #fffaf3; color: #2b2b2b; }
+      header { background: white; padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+      header a { text-decoration: none; color: #7b2d2d; font-weight: 700; }
+      .container { padding: 45px 6%; }
+      h1 { color: #7b2d2d; font-size: 38px; margin-bottom: 28px; }
+      .empty { background: white; padding: 35px; border-radius: 10px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+      .empty a { display: inline-block; margin-top: 18px; background: #8b3a3a; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; }
     </style>
   </head>
-
   <body>
     <header>
       <a href="/">Serenidad de Luna</a>
       <a href="/">Volver al inicio</a>
     </header>
-
     <main class="container">
       <h1>Carrito</h1>
       <div id="cart-content"></div>
     </main>
-
     <script>
       const whatsapp = "593998022405";
       const cartContent = document.getElementById("cart-content");
 
-      function formatPrice(value) {
-        return `$${Number(value).toFixed(2)}`;
-      }
-
-      function getCart() {
-        return JSON.parse(localStorage.getItem("cart")) || [];
-      }
-
-      function saveCart(cart) {
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
+      function formatPrice(v) { return `$${Number(v).toFixed(2)}`; }
+      function getCart() { return JSON.parse(localStorage.getItem("cart")) || []; }
+      function saveCart(c) { localStorage.setItem("cart", JSON.stringify(c)); }
 
       function renderCart() {
         const cart = getCart();
-
         if (cart.length === 0) {
-          cartContent.innerHTML = `
-            <div class="empty">
-              <h2>Tu carrito está vacío</h2>
-              <p>Agrega productos desde el catálogo para hacer tu pedido.</p>
-              <a href="/">Volver al catálogo</a>
-            </div>
-          `;
+          cartContent.innerHTML = `<div class="empty"><h2>Tu carrito está vacío</h2><p>Agrega productos desde el catálogo.</p><a href="/">Volver al catálogo</a></div>`;
           return;
         }
-
-        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+        const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
 
         cartContent.innerHTML = `
-          <div class="cart-layout">
-            <section class="cart-items">
+          <div style="display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;">
+            <section style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
               ${cart.map((item, index) => `
-                <article class="cart-card">
-                  <img src="${item.image}" alt="${item.title}" style="width:100%;height:160px;object-fit:cover;display:block;" />
-
-                  <div class="product-info">
-                    <h3>${item.title}</h3>
-                    <div class="price">${formatPrice(item.price)}</div>
-
-                    <div class="quantity-control">
-                      <button class="decrease" data-index="${index}">-</button>
-                      <span>${item.quantity}</span>
-                      <button class="increase" data-index="${index}">+</button>
+                <article style="background:white;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08);display:flex;flex-direction:column;">
+                  <img src="${item.image}" alt="${item.title}" style="width:100%;height:160px;object-fit:cover;display:block;background:#f2f2f2;" />
+                  <div style="padding:14px 16px;">
+                    <h3 style="margin:0 0 6px;font-size:15px;color:#2b2b2b;">${item.title}</h3>
+                    <div style="font-weight:bold;color:#8b3a3a;margin-bottom:10px;">${formatPrice(item.price)}</div>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <button class="decrease" data-index="${index}" style="width:28px;height:28px;border:1px solid #ddd;background:#fffaf3;cursor:pointer;border-radius:5px;font-weight:bold;">-</button>
+                      <span style="min-width:22px;text-align:center;font-weight:bold;">${item.quantity}</span>
+                      <button class="increase" data-index="${index}" style="width:28px;height:28px;border:1px solid #ddd;background:#fffaf3;cursor:pointer;border-radius:5px;font-weight:bold;">+</button>
                     </div>
                   </div>
-
-                  <div class="item-actions">
-                    <div class="subtotal">${formatPrice(item.price * item.quantity)}</div>
-                    <button class="remove" data-index="${index}">Eliminar</button>
+                  <div style="padding:0 16px 14px;margin-top:auto;">
+                    <div style="font-weight:bold;color:#7b2d2d;margin-bottom:8px;">${formatPrice(item.price * item.quantity)}</div>
+                    <button class="remove" data-index="${index}" style="border:none;background:transparent;color:#999;cursor:pointer;font-size:13px;padding:0;">✕ Eliminar</button>
                   </div>
                 </article>
               `).join("")}
             </section>
 
-            <aside class="summary">
-              <h2>Resumen</h2>
-
-              <div class="summary-row">
-                <span>Productos</span>
-                <span>${totalItems}</span>
+            <aside style="background:linear-gradient(160deg,#fff 0%,#fff5ea 100%);border:2px solid #b9875d;border-radius:18px;padding:28px;box-shadow:0 12px 32px rgba(123,45,45,.14);position:sticky;top:20px;">
+              <h2 style="margin:0 0 18px;color:#7b2d2d;font-size:22px;font-weight:800;text-align:center;border-bottom:2px solid #e8c99a;padding-bottom:16px;letter-spacing:.5px;">🛍️ Resumen del pedido</h2>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed #e0c9b0;font-size:15px;color:#555;">
+                <span>Artículos</span><span style="font-weight:700;color:#2b2b2b;">${totalItems}</span>
               </div>
-
-              <div class="summary-row">
-                <span>Subtotal</span>
-                <span>${formatPrice(total)}</span>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed #e0c9b0;font-size:15px;color:#555;">
+                <span>Subtotal</span><span style="font-weight:700;color:#2b2b2b;">${formatPrice(total)}</span>
               </div>
-
-              <div class="summary-total">
-                <span>Total</span>
-                <span>${formatPrice(total)}</span>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0 22px;font-size:22px;font-weight:800;color:#7b2d2d;">
+                <span>Total</span><span>${formatPrice(total)}</span>
               </div>
-
-              <button class="whatsapp" id="send-whatsapp">
-                Hacer pedido por WhatsApp
+              <button id="send-whatsapp" style="width:100%;border:none;background:#25D366;color:white;padding:16px;font-size:17px;font-weight:800;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(37,211,102,.38);letter-spacing:.3px;">
+                📱 Hacer pedido por WhatsApp
               </button>
+              <p style="text-align:center;color:#999;font-size:12px;margin:14px 0 0;">Te contactaremos para confirmar tu pedido</p>
             </aside>
-          </div>
-        `;
+          </div>`;
 
-        document.querySelectorAll(".increase").forEach((button) => {
-          button.addEventListener("click", () => {
-            const cart = getCart();
-            const index = Number(button.dataset.index);
-            cart[index].quantity += 1;
-            saveCart(cart);
-            renderCart();
-          });
-        });
-
-        document.querySelectorAll(".decrease").forEach((button) => {
-          button.addEventListener("click", () => {
-            const cart = getCart();
-            const index = Number(button.dataset.index);
-
-            if (cart[index].quantity > 1) {
-              cart[index].quantity -= 1;
-            }
-
-            saveCart(cart);
-            renderCart();
-          });
-        });
-
-        document.querySelectorAll(".remove").forEach((button) => {
-          button.addEventListener("click", () => {
-            const cart = getCart();
-            const index = Number(button.dataset.index);
-            cart.splice(index, 1);
-            saveCart(cart);
-            renderCart();
-          });
-        });
-
+        document.querySelectorAll(".increase").forEach(b => b.addEventListener("click", () => {
+          const c = getCart(); c[+b.dataset.index].quantity += 1; saveCart(c); renderCart();
+        }));
+        document.querySelectorAll(".decrease").forEach(b => b.addEventListener("click", () => {
+          const c = getCart();
+          if (c[+b.dataset.index].quantity > 1) c[+b.dataset.index].quantity -= 1;
+          saveCart(c); renderCart();
+        }));
+        document.querySelectorAll(".remove").forEach(b => b.addEventListener("click", () => {
+          const c = getCart(); c.splice(+b.dataset.index, 1); saveCart(c); renderCart();
+        }));
         document.getElementById("send-whatsapp").addEventListener("click", () => {
-          const cart = getCart();
-
-          const items = cart.map((item) => {
-            return `- ${item.title} x${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`;
-          }).join("%0A");
-
-          const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-          const message = `Hola,%20quiero%20hacer%20este%20pedido:%0A%0A${items}%0A%0ATotal:%20$${total.toFixed(2)}`;
-
-          window.open(`https://wa.me/${whatsapp}?text=${message}`, "_blank");
+          const c = getCart();
+          const items = c.map(i => `- ${i.title} x${i.quantity} = $${(i.price*i.quantity).toFixed(2)}`).join("%0A");
+          const t = c.reduce((s,i) => s + i.price*i.quantity, 0);
+          window.open(`https://wa.me/${whatsapp}?text=Hola,%20quiero%20hacer%20este%20pedido:%0A%0A${items}%0A%0ATotal:%20$${t.toFixed(2)}`, "_blank");
         });
       }
 
